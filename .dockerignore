@@ -1,0 +1,11 @@
+node_modules
+vendor
+.git
+.env
+frontend
+storage/*.key
+.phpunit.result.cache
+tests
+.github
+*.md
+deploy.sh

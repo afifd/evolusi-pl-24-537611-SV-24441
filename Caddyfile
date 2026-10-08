@@ -1,0 +1,16 @@
+{
+	# Global options
+	auto_https off
+	admin off
+}
+
+:8000 {
+	# Set webroot to Laravel public folder
+	root * /app/public
+
+	# Enable FrankenPHP
+	php_server
+
+	# Fallback to index.php for SPA / Laravel routing
+	file_server
+}
