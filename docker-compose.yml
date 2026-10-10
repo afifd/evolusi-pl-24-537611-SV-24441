@@ -1,0 +1,49 @@
+services:
+  backend:
+    image: ghcr.io/afifd/evolusi-pl-24-537611-sv-24441/backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: evo-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: "Evolusi PL Tugas API"
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_KEY: ${APP_KEY:-base64:XG8dFp0d2VqFm3aZ6u7y8I9o0p1q2r3s4t5u6v7w8x8=}
+      DB_CONNECTION: sqlite
+      DB_DATABASE: /app/database/database.sqlite
+      SESSION_DRIVER: database
+      CACHE_STORE: database
+    volumes:
+      - db-data:/app/database
+    networks:
+      - evo-net
+
+  frontend:
+    image: ghcr.io/afifd/evolusi-pl-24-537611-sv-24441/frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:8000/api
+    container_name: evo-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - evo-net
+
+volumes:
+  db-data:
+    name: evo-db-data
+
+networks:
+  evo-net:
+    name: evo-network
+    driver: bridge
