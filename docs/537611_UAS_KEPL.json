@@ -1,0 +1,2533 @@
+{
+  "info": {
+    "name": "537611_UAS_KEPL",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/register",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "register"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Afif\",\n  \"email\": \"me@afif.dev\",\n  \"password\": \"password\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "201 - Created",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/register",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "register"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Afif\",\n  \"email\": \"me@afif.dev\",\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 11:58:56 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Registration successful\",\n  \"user\": {\n    \"id\": 1,\n    \"name\": \"Afif\",\n    \"email\": \"me@afif.dev\"\n  },\n  \"token\": \"1|BpUsXgKSQzVLdvETc1zkRFqNRuF8ypPJKqBN1hST4d6aac2d\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "422 - Duplicate email",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/register",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "register"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Afif\",\n  \"email\": \"me@afif.dev\",\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 11:59:12 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"The email has already been taken.\",\n  \"errors\": {\n    \"email\": [\n      \"The email has already been taken.\"\n    ]\n  }\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "422 - Missing email field",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/register",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "register"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Afif\",\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 11:59:45 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"The email field is required.\",\n  \"errors\": {\n    \"email\": [\n      \"The email field is required.\"\n    ]\n  }\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "422 - Missing name",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/register",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "register"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"me@afif.com\",\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:00:39 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"The name field is required.\",\n  \"errors\": {\n    \"name\": [\n      \"The name field is required.\"\n    ]\n  }\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "422 - Missing password",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/register",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "register"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Afif\",\n  \"email\": \"me@afif.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:01:10 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"The password field is required.\",\n  \"errors\": {\n    \"password\": [\n      \"The password field is required.\"\n    ]\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/login",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "login"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"me@afif.dev\",\n  \"password\": \"password\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"me@afif.dev\",\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:03:19 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Login successful\",\n  \"user\": {\n    \"id\": 1,\n    \"name\": \"Afif\",\n    \"email\": \"me@afif.dev\"\n  },\n  \"token\": \"2|kAqXLJz7gL87iHYjwdwsAvTAcBb0GNyWdzDa0Vcw71c11c12\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "401 - Wrong password",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"me@afif.dev\",\n  \"password\": \"password1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:03:42 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Invalid credentials\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "401 - Unregistered email",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"me@afif.com\",\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:04:16 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Invalid credentials\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "422 - Missing email",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"password\": \"password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:04:39 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"The email field is required.\",\n  \"errors\": {\n    \"email\": [\n      \"The email field is required.\"\n    ]\n  }\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "422 - Missing password",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/login",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "login"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"me@afif.dev\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:04:58 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"The password field is required.\",\n  \"errors\": {\n    \"password\": [\n      \"The password field is required.\"\n    ]\n  }\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Create a Task",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/tugas",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "tugas"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Nilai KEPL Afif A\",\n  \"description\": \"Afif mendapatkan nilai sempurna, A, pada matkul KEPL\",\n  \"status\": \"in_progress\",\n  \"due_date\": \"2026-10-15\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "201 - Created",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Nilai KEPL Afif A\",\n  \"description\": \"Afif mendapatkan nilai sempurna, A, pada matkul KEPL\",\n  \"status\": \"in_progress\",\n  \"due_date\": \"2026-10-15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:08:31 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Tugas created successfully\",\n  \"data\": {\n    \"title\": \"Nilai KEPL Afif A\",\n    \"description\": \"Afif mendapatkan nilai sempurna, A, pada matkul KEPL\",\n    \"status\": \"in_progress\",\n    \"due_date\": \"2026-10-15\",\n    \"user_id\": 1,\n    \"updated_at\": \"2026-10-08T12:08:31.000000Z\",\n    \"created_at\": \"2026-10-08T12:08:31.000000Z\",\n    \"id\": 1\n  }\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "422 - Missing title",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"Afif mendapatkan nilai sempurna, A, pada matkul KEPL\",\n  \"status\": \"in_progress\",\n  \"due_date\": \"2026-10-15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:08:44 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"The title field is required.\",\n  \"errors\": {\n    \"title\": [\n      \"The title field is required.\"\n    ]\n  }\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "401 - Unauthorized",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Nilai KEPL Afif A\",\n  \"description\": \"Afif mendapatkan nilai sempurna, A, pada matkul KEPL\",\n  \"status\": \"in_progress\",\n  \"due_date\": \"2026-10-15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:12:42 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "List Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{tokens}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/tugas",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "tugas"
+          ],
+          "query": [],
+          "variable": []
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok no data",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:15:04 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"data\": []\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:15:26 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"user_id\": 1,\n      \"title\": \"Nilai KEPL Afif A\",\n      \"description\": \"Afif mendapatkan nilai sempurna, A, pada matkul KEPL\",\n      \"status\": \"in_progress\",\n      \"due_date\": \"2026-10-15\",\n      \"created_at\": \"2026-10-08T12:15:22.000000Z\",\n      \"updated_at\": \"2026-10-08T12:15:22.000000Z\"\n    }\n  ]\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "401 - Unauthorized",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:30:20 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Edit a Task",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{tokens}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/tugas/:id",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "tugas",
+            ":id"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Semua Nilai Matkul Afif A\",\n  \"description\": \"Afif mendapatkan nilai sempurna, A semua\",\n  \"status\": \"completed\",\n  \"due_date\": \"2026-12-15\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas/:id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Semua Nilai Matkul Afif A\",\n  \"description\": \"Afif mendapatkan nilai sempurna, A semua\",\n  \"status\": \"completed\",\n  \"due_date\": \"2026-12-15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:18:33 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Tugas updated successfully\",\n  \"data\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"title\": \"Semua Nilai Matkul Afif A\",\n    \"description\": \"Afif mendapatkan nilai sempurna, A semua\",\n    \"status\": \"completed\",\n    \"due_date\": \"2026-12-15\",\n    \"created_at\": \"2026-10-08T12:15:22.000000Z\",\n    \"updated_at\": \"2026-10-08T12:18:33.000000Z\"\n  }\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "404 - Tugas not found",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas/:id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Semua Nilai Matkul Afif A\",\n  \"description\": \"Afif mendapatkan nilai sempurna, A semua\",\n  \"status\": \"completed\",\n  \"due_date\": \"2026-12-15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:27:39 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Tugas not found\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "401 - Unauthorized",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas/:id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Semua Nilai Matkul Afif A\",\n  \"description\": \"Afif mendapatkan nilai sempurna, A semua\",\n  \"status\": \"completed\",\n  \"due_date\": \"2026-12-15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:30:45 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Delete a Task",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/tugas/:id",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "tugas",
+            ":id"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas/:id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Semua Nilai Matkul Afif A\",\n  \"description\": \"Afif mendapatkan nilai sempurna, A semua\",\n  \"status\": \"completed\",\n  \"due_date\": \"2026-12-15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:18:33 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Tugas updated successfully\",\n  \"data\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"title\": \"Semua Nilai Matkul Afif A\",\n    \"description\": \"Afif mendapatkan nilai sempurna, A semua\",\n    \"status\": \"completed\",\n    \"due_date\": \"2026-12-15\",\n    \"created_at\": \"2026-10-08T12:15:22.000000Z\",\n    \"updated_at\": \"2026-10-08T12:18:33.000000Z\"\n  }\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "404 - Tugas not found",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas/:id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Semua Nilai Matkul Afif A\",\n  \"description\": \"Afif mendapatkan nilai sempurna, A semua\",\n  \"status\": \"completed\",\n  \"due_date\": \"2026-12-15\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:27:39 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Tugas not found\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "401 - Unauthorized",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas/:id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:29:25 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/tugas/:id",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "tugas",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:29:53 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Tugas deleted successfully\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{tokens}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/user",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user"
+          ],
+          "query": [],
+          "variable": []
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:31:47 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"user\": {\n    \"id\": 1,\n    \"name\": \"Afif\",\n    \"email\": \"me@afif.dev\"\n  }\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "401 - Unauthorized",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "user"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:32:01 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{baseUrl}}/logout",
+          "protocol": "",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "logout"
+          ],
+          "query": [],
+          "variable": []
+        }
+      },
+      "response": [
+        {
+          "name": "401 - Unauthenticated",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/logout",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "logout"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:33:39 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Unauthenticated.\"\n}",
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/logout",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "logout"
+              ],
+              "query": [],
+              "variable": []
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "host",
+              "value": "127.0.0.1:8000",
+              "name": "host",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "connection",
+              "value": "close",
+              "name": "connection",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "PHP/8.5.11",
+              "name": "x-powered-by",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, private",
+              "name": "cache-control",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 08 Oct 2026 12:33:54 GMT",
+              "name": "date",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json",
+              "name": "content-type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "access-control-allow-origin",
+              "value": "*",
+              "name": "access-control-allow-origin",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Logged out successfully\"\n}",
+          "_postman_previewlanguage": "json"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "tokens",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
