@@ -28,12 +28,13 @@ RUN composer dump-autoload --optimize --no-dev --classmap-authoritative
 # ===================================================
 FROM docker.io/dunglas/frankenphp:1.13.0-php8.4-alpine AS runner
 
-# Install only runtime extensions in minimal Alpine
-RUN install-php-extensions \
-    pdo_sqlite \
-    zip \
-    intl \
-    opcache
+# Install only runtime extensions and curl for healthcheck
+RUN apk add --no-cache curl \
+    && install-php-extensions \
+        pdo_sqlite \
+        zip \
+        intl \
+        opcache
 
 WORKDIR /app
 
@@ -43,11 +44,14 @@ COPY --from=builder --chown=www-data:www-data /app /app
 # Copy Caddyfile configuration
 COPY --chown=www-data:www-data Caddyfile /etc/caddy/Caddyfile
 
+# Copy entrypoint script and make it executable
+COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
 # Ensure proper storage & database permissions for non-root execution
-RUN mkdir -p /app/storage/framework/{sessions,views,cache} /app/storage/logs /app/bootstrap/cache \
+RUN mkdir -p /app/storage/framework/{sessions,views,cache} /app/storage/logs /app/bootstrap/cache /app/database /data /config \
     && touch /app/database/database.sqlite \
-    && chown -R www-data:www-data /app/storage /app/bootstrap/cache /app/database \
-    && chmod -R 775 /app/storage /app/bootstrap/cache /app/database
+    && chown -R www-data:www-data /app/storage /app/bootstrap/cache /app/database /data /config \
+    && chmod -R 775 /app/storage /app/bootstrap/cache /app/database /data /config
 
 # Enforce non-root execution (Tugas 5 rubric requirement)
 USER www-data
@@ -58,5 +62,6 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 
 EXPOSE 8000
 
-# Run FrankenPHP
+# Entrypoint runs migrations automatically, then starts FrankenPHP
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile"]
