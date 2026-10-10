@@ -85,12 +85,20 @@ jobs:
     if: github.ref == 'refs/heads/main'
     environment:
       name: production
+    env:
+      APP_KEY: ${{ secrets.APP_KEY }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Run Production Deployment Steps
         run: |
+          echo "Deploying to production environment..."
+          if [ -n "$APP_KEY" ]; then
+            echo "Secret APP_KEY verified from GitHub Secrets."
+          else
+            echo "Notice: APP_KEY secret not found or empty."
+          fi
           echo "1. php artisan down --retry=60"
           echo "2. git pull origin main"
           echo "3. composer install --no-dev --optimize-autoloader"
